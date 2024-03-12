@@ -1,0 +1,645 @@
+.header {
+  width: 100%;
+  height: 126px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+}
+
+.header__cinta {
+  width: 100%;
+  height: 49px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+  overflow: hidden;
+
+  .header__text {
+    font-family: "Urbanist Medium";
+    color: var(--white);
+    font-size: 0.9rem;
+  }
+}
+
+.header__box {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  max-width: 170px;
+  height: 100%;
+
+  .logo__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.nav {
+  width: 100%;
+  height: 100%;
+}
+
+.nav__list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav__item {
+  font-family: "Urbanist Medium";
+  cursor: pointer;
+  width: 100px;
+  height: 45px;
+  border: 1px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  transition: 0.3s ease all;
+}
+
+.login__item {
+  font-family: "Urbanist Medium";
+  cursor: pointer;
+  width: 100px;
+  height: 45px;
+  border: 1px solid var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  border-color: var(--border-color);
+  color: var(--white);
+  transition: 0.3s ease all;
+}
+
+.nav__item:hover {
+  background-color: var(--primary-color);
+  border-color: var(--border-color);
+  color: var(--white);
+}
+
+.login__list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.login__item--menu {
+  display: none;
+  position: relative;
+
+  i {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    text-align: center;
+    display: inline-table;
+    font-size: 1.5rem;
+  }
+}
+.login__item--login:hover,
+.login__item--menu:hover {
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+.login__item--login:active,
+.login__item--menu:active {
+  transform: scale(0.9);
+}
+
+//* Carousel
+.carousel {
+  width: 100%;
+  height: 550px;
+}
+
+::ng-deep .custom-carousel {
+  width: 100%;
+  height: 100%;
+
+  .p-carousel-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .p-ripple.p-element.p-carousel-prev.p-link {
+    left: 0;
+    margin-left: 35px;
+  }
+
+  .p-ripple.p-element.p-carousel-next.p-link {
+    right: 0;
+    margin-right: 35px;
+  }
+
+  .p-ripple.p-element.p-carousel-next.p-link,
+  .p-ripple.p-element.p-carousel-prev.p-link {
+    position: absolute;
+    z-index: 1;
+    font-size: 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 6px;
+    border-radius: 50%;
+  }
+
+  .img-carousel {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+
+//* Acerca de
+.acerca {
+  width: 100%;
+  height: 500px;
+
+  .acerca__box {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .acerca__img {
+    display: block;
+    width: 558px;
+    height: 447px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.acerca__title {
+  font-family: "Urbanist Medium";
+  font-size: 3.8rem;
+  margin-bottom: 15px;
+}
+
+.acerca__paragraph,
+.cursos__paragraph {
+  font-size: 1.1rem;
+}
+
+.acerca__image {
+  width: 100%;
+  height: 100%;
+}
+
+//* Cursos
+.cursos {
+  color: var(--white);
+  width: 100%;
+  height: 638px;
+  overflow: hidden;
+
+  .cursos__box {
+    width: 90%;
+    margin: auto;
+    height: 100%;
+    padding: 40px 15px;
+  }
+}
+
+.cursos__title {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.cursos__cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 35px;
+  margin-top: 15px;
+  width: 100%;
+  height: 420px;
+
+  .cursos__card {
+    width: 370px;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.cursos__picture {
+  display: inline-block;
+  width: 100%;
+  height: 220px;
+
+  .cursos__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
+
+.cursos__name {
+  font-family: "Urbanist Semibold";
+  font-size: 1.5rem;
+}
+
+.cursos__description {
+  font-family: "Urbanist Medium";
+  font-size: 1.1rem;
+}
+
+//*Servicios
+.servicios {
+  width: 100%;
+  height: 600px;
+
+  .servicios__box {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 25px;
+  }
+}
+
+.servicios__title {
+  font-size: 3rem;
+  margin-bottom: 22px;
+}
+
+.servicios__paragraph {
+  font-size: 1.1rem;
+  margin-bottom: 60px;
+}
+
+.servicios__cards {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 12px;
+
+  .servicios__card {
+    width: 450px;
+    height: 250px;
+    border-radius: 12px;
+    padding: 45px;
+    box-shadow: rgba(43, 95, 218, 0.386) 0px 2px 8px 0px;
+    overflow: hidden;
+  }
+}
+
+.servicios__name {
+  font-family: "Urbanist Semibold";
+  font-size: 1.9rem;
+  margin-bottom: 16px;
+}
+
+.servicio__description {
+  font-size: 1.1rem;
+}
+
+//*Banner
+.banner {
+  width: 100%;
+  height: 210px;
+  position: relative;
+  background-color: var(--primary-color);
+  z-index: 1;
+  padding: 15px 45px;
+  color: var(--white);
+
+  .banner__bg {
+    background-image: url(../../../assets/images/illustrations/endless-clouds.svg);
+    filter: brightness(0) saturate(100%) invert(91%) sepia(23%) saturate(0%)
+      hue-rotate(132deg) brightness(92%) contrast(83%);
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.banner__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  height: 100%;
+
+  .banner__title {
+    font-family: "Urbanist Semibold";
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+  }
+
+  .banner__text {
+    width: 50%;
+  }
+
+  .banner__cta {
+    font-family: "Urbanist Semibold";
+    border-radius: 12px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 12px 22px;
+    cursor: pointer;
+  }
+}
+
+//*Contacto
+.contacto {
+  width: 100%;
+  height: 700px;
+  background: radial-gradient(
+    125% 125% at 50% 10%,
+    var(--white) 40%,
+    var(--primary-color) 100%
+  );
+}
+
+.contacto__box {
+  width: 90%;
+  height: 100%;
+  padding: 45px 10px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.contacto__info {
+  width: 60%;
+}
+
+.contacto__title {
+  font-family: "Urbanist Medium";
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+}
+
+.contacto__description {
+  width: 60%;
+}
+
+.contacto__form {
+  width: 40%;
+  height: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 25px;
+  background-color: var(--white);
+}
+
+.contacto__label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.contacto__span {
+  margin-bottom: 5px;
+}
+
+.contacto__input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+}
+
+.contacto__input:focus {
+  outline: 1px solid var(--primary-color);
+}
+
+.contacto__cta {
+  font-family: "Urbanist Medium";
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  outline: none;
+  color: var(--white);
+  border-radius: 8px;
+  margin-top: 12px;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+
+//*Footer
+.footer {
+  width: 100%;
+  height: 68px;
+  background-color: var(--primary-color);
+
+  .footer__box {
+    margin: auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+  }
+}
+
+.footer__link {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--white);
+  margin-right: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+  }
+}
+
+/* Responsive menu */
+
+.hidden {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 9999;
+  flex-direction: column !important;
+  padding: 15px;
+
+  .nav {
+    display: block;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .login__item--login {
+    display: block;
+    text-align: center;
+  }
+}
+
+/* MEDIAS */
+
+@media screen and (max-width: 1200px) {
+  .carousel {
+    height: 100%;
+  }
+
+  .acerca__box {
+    flex-direction: column;
+  }
+
+  .acerca,
+  .cursos,
+  .servicios {
+    height: max-content;
+  }
+
+  .cursos__cards {
+    flex-wrap: wrap;
+    height: max-content;
+  }
+
+  .servicios__cards {
+    flex-wrap: wrap;
+    height: max-content;
+
+    .servicios__card {
+      width: 100%;
+      height: max-content;
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .header,
+  .banner,
+  .contacto,
+  .footer {
+    height: max-content;
+  }
+
+  .header__box {
+    padding: 15px 8px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav__item {
+    width: 100%;
+  }
+
+  .acerca__box {
+    .acerca__img {
+      width: 100%;
+    }
+  }
+
+  .banner__box {
+    flex-direction: column;
+    gap: 25px;
+
+    .banner__text {
+      width: 100%;
+    }
+  }
+
+  .contacto__box {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .contacto__info,
+  .contacto__form,
+  .contacto__description {
+    width: 90%;
+  }
+
+  .footer__box {
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login__item--menu {
+    display: block;
+  }
+
+  .header__box {
+    flex-direction: row;
+  }
+
+  .nav,
+  .login__item--login {
+    display: none;
+  }
+
+  .nav__item {
+    color: var(--white);
+  }
+
+  .nav__item:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+  }
+
+  .servicios__box {
+    width: 100%;
+    .servicios__card {
+      width: 100%;
+    }
+  }
+}

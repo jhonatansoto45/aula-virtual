@@ -1,0 +1,233 @@
+<header class="header">
+  <div class="header__cinta illustration">
+    <p class="header__text">
+      ✨ ¡Avanza a tu propio ritmo y según tus necesidades!
+    </p>
+  </div>
+  <div class="header__box" #nav>
+    <picture class="logo">
+      <img
+        src="../../../assets/images/logos/header.png"
+        alt="CUV Logo"
+        class="logo__img"
+      />
+    </picture>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item" (click)="scrollToContain(sections.carousel)">
+          Inicio
+        </li>
+        <li class="nav__item" (click)="scrollToContain(sections.acerca)">
+          Acerca de
+        </li>
+        <li class="nav__item" (click)="scrollToContain(sections.cursos)">
+          Cursos
+        </li>
+        <li class="nav__item" (click)="scrollToContain(sections.servicios)">
+          Servicios
+        </li>
+        <li class="nav__item" (click)="scrollToContain(sections.contacto)">
+          Contacto
+        </li>
+      </ul>
+    </nav>
+    <div class="login">
+      <ul class="login__list">
+        <li class="login__item login__item--login" (click)="login()">Ingresar</li>
+        <li
+          class="login__item login__item--menu"
+          (click)="openMenu(activeMenu)"
+        >
+          <i class="pi pi-{{ !activeMenu ? 'bars' : 'times' }}"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<!-- Main -->
+<div class="container">
+  <section id="carousel" class="carousel">
+    <p-carousel
+      [value]="images"
+      styleClass="custom-carousel"
+      [numVisible]="1"
+      [circular]="true"
+      [autoplayInterval]="4000"
+      [responsiveOptions]="responsiveOptions"
+    >
+      <ng-template let-item pTemplate="item">
+        <img
+          class="img-carousel"
+          [src]="item.previewImageSrc"
+          [alt]="item.alt"
+          [title]="item.title"
+        />
+      </ng-template>
+    </p-carousel>
+  </section>
+
+  <section id="acerca" class="acerca">
+    <div class="acerca__box">
+      <div class="acerca__description">
+        <h2 class="acerca__title">
+          Discover Your Dream Property with Estatein
+        </h2>
+        <p class="acerca__paragraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          eius, fugiat optio vel accusamus ratione itaque? Quos consequatur,
+          cupiditate deserunt consectetur fugiat eos, sed voluptas qui, at
+          itaque aut aperiam? Ullam a exercitationem labore ratione. Amet beatae
+          minima hic nostrum cumque sed reiciendis iusto eius officia inventore
+          voluptates, molestias aliquam vel dignissimos id repudiandae labore
+          corrupti! Ullam autem inventore hic.
+        </p>
+      </div>
+      <div class="acerca__image">
+        <picture class="acerca__img">
+          <img src="../../../assets/images/logos/logo.png" alt="Logo CUV" />
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="cursos illustration" id="cursos">
+    <div class="cursos__box">
+      <h2 class="cursos__title">Featured Properties</h2>
+      <p class="cursos__paragraph">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam,
+        incidunt maxime, beatae dicta quaerat magni in illum ipsum veritatis
+        similique modi consequatur, nesciunt rerum! Et beatae facere aspernatur
+        accusamus neque?
+      </p>
+      <article class="cursos__cards">
+        <div class="cursos__card" *ngFor="let item of cards">
+          <picture class="cursos__picture">
+            <img [src]="item.image" [alt]="item.title" class="cursos__img" />
+          </picture>
+          <h3 class="cursos__name">{{ item.title }}</h3>
+          <hr [ngStyle]="{ width: '100%' }" />
+          <p class="cursos__description">
+            {{ item.description }}
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="servicios" id="servicios">
+    <div class="servicios__box">
+      <h2 class="servicios__title">Services Properties</h2>
+      <p class="servicios__paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis non
+        beatae ad, aspernatur nobis dolorum, maiores repudiandae, consequatur
+        itaque nihil eius provident! Eligendi veniam modi architecto laudantium
+        dolore, quia perspiciatis!
+      </p>
+      <article class="servicios__cards">
+        <div class="servicios__card">
+          <h3 class="servicios__name">3+ Years of Excellence</h3>
+          <p class="servicio__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            maiores impedit consectetur cum maxime dolorem earum ullam, est ab
+            quasi vitae eum explicabo eaque quidem, at, quibusdam labore
+            repudiandae nesciunt?
+          </p>
+        </div>
+        <div class="servicios__card">
+          <h3 class="servicios__name">Happy Clients</h3>
+          <p class="servicio__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            maiores impedit consectetur cum maxime dolorem earum ullam, est ab
+            quasi vitae eum explicabo eaque quidem, at, quibusdam labore
+            repudiandae nesciunt?
+          </p>
+        </div>
+        <div class="servicios__card">
+          <h3 class="servicios__name">Industry Recognition</h3>
+          <p class="servicio__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+            maiores impedit consectetur cum maxime dolorem earum ullam, est ab
+            quasi vitae eum explicabo eaque quidem, at, quibusdam labore
+            repudiandae nesciunt?
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="banner">
+    <div class="banner__box">
+      <div class="banner__text">
+        <h2 class="banner__title">Start Your Real Estate Journey Today</h2>
+        <p class="banner__description">
+          Your dream property is just a click away. Whether you're looking for a
+          new home, a strategic investment, or expert real estate advice,
+          Estatein is here to assist you every step of the way. Take the first
+          step towards your real estate goals and explore our available
+          properties or get in touch with our team for personalized assistance.
+        </p>
+      </div>
+      <div class="banner__cta">Comienza aquí</div>
+    </div>
+    <div class="banner__bg"></div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="contacto__box">
+      <div class="contacto__info">
+        <h2 class="contacto__title">Meet the Estatein Team</h2>
+        <p class="contacto__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+          corrupti eaque labore perferendis maxime eos quidem repellendus, ab
+          repellat ad sunt, dignissimos earum obcaecati laboriosam error? Vitae
+          ad nobis nam.
+        </p>
+      </div>
+      <form class="contacto__form">
+        <h2 class="contacto__title">Registry</h2>
+        <label for="" class="contacto__label">
+          <span class="contacto__span">Nombre</span>
+          <input type="text" class="contacto__input" />
+        </label>
+        <label for="" class="contacto__label">
+          <span class="contacto__span">Apellido</span>
+          <input type="text" class="contacto__input" />
+        </label>
+        <label for="" class="contacto__label">
+          <span class="contacto__span">Email</span>
+          <input type="text" class="contacto__input" />
+        </label>
+        <label for="" class="contacto__label">
+          <span class="contacto__span">Dirección</span>
+          <input type="text" class="contacto__input" />
+        </label>
+        <label for="" class="contacto__label">
+          <span class="contacto__span">Teléfono</span>
+          <input type="number" class="contacto__input" />
+        </label>
+        <label for="" class="contacto__label">
+          <span class="contacto__span">Descripción</span>
+          <input type="text" class="contacto__input" />
+        </label>
+        <button class="contacto__cta" type="submit">Registrar</button>
+      </form>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer__box">
+    <div class="footer__terms">
+      <span class="footer__copy">@2024 Ney. Todos los derechos reservados</span>
+    </div>
+    <div class="footer__social">
+      <button
+        class="footer__link"
+        *ngFor="let item of social"
+        [title]="item.icon"
+      >
+        <i class="pi pi-{{ item.icon }}"></i>
+      </button>
+    </div>
+  </div>
+</footer>
