@@ -37,6 +37,8 @@ export class LoginComponent implements OnInit {
       this.form.markAllAsTouched();
       return;
     }
+
+    console.log('validado');
   }
 
   private initForm(): void {
