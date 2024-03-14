@@ -12,7 +12,7 @@
     </h3>
   </div>
   <div class="contain__form">
-    <button class="contain__back" title="Regresar" (click)="back()">
+    <button class="contain__back" title="Regresar" (click)="navigateTo('/')">
       <i class="pi pi-arrow-left"></i>
     </button>
     <div class="contain__box">
@@ -64,7 +64,7 @@
         <button type="submit" class="form__cta">Iniciar</button>
       </form>
       <span class="form__singup"
-        >¿No cuentas con una cuenta? <a>Registrate</a>
+        >¿No cuentas con una cuenta? <a (click)="navigateTo('/auth/registry/')">Registrate</a>
       </span>
     </div>
   </div>

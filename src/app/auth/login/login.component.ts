@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
       ? true
       : false;
 
-  back(): void {
-    this.router.navigate(['/']);
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
   }
 
   savedForm(): void {

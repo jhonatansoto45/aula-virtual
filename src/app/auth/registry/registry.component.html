@@ -1,1 +1,109 @@
-<p>registry works!</p>
+<section class="contain">
+  <div class="contain__legend bg">
+    <picture class="contain__picture">
+      <img
+        src="../../../assets/images/logos/logo-blanco.png"
+        alt="Logo CUV"
+        class="contain__img"
+      />
+    </picture>
+    <h3 class="contain__text">
+      El aprendizaje en tus manos, en cualquier momento y lugar
+    </h3>
+  </div>
+  <div class="contain__form">
+    <button class="contain__back" title="Regresar" (click)="navigateTo('/')">
+      <i class="pi pi-arrow-left"></i>
+    </button>
+    <div class="contain__box">
+      <h4 class="contain__title">Crear Cuenta</h4>
+
+      <form
+        class="form"
+        autocomplete="off"
+        [formGroup]="form"
+        (ngSubmit)="savedForm()"
+      >
+        <label class="form__label">
+          <span class="form__span">Nombre</span>
+          <input
+            class="form__input"
+            type="text"
+            placeholder="Sebastian Sanchez"
+            formControlName="name"
+          />
+          <span *ngIf="valideForm('name')" class="form__error">
+            Este campo debe ser llenado.
+          </span>
+        </label>
+        <label class="form__label">
+          <span class="form__span">Email</span>
+          <input
+            class="form__input"
+            type="email"
+            placeholder="test@test.com"
+            formControlName="email"
+          />
+          <span *ngIf="valideForm('email')" class="form__error">
+            Este campo debe ser llenado.
+          </span>
+        </label>
+        <label class="form__label">
+          <span class="form__span">Contraseña</span>
+          <div class="form__password">
+            <input
+              class="form__input form__input--password"
+              [type]="viewPassword"
+              formControlName="password"
+            />
+            <button
+              type="button"
+              class="form__eye"
+              (click)="changeViewPassword()"
+            >
+              <i
+                class="pi pi-{{
+                  viewPassword === 'password' ? 'eye' : 'eye-slash'
+                }}"
+              >
+              </i>
+            </button>
+          </div>
+          <span *ngIf="valideForm('password')" class="form__error">
+            Este campo debe ser llenado.
+          </span>
+        </label>
+        <label class="form__label">
+          <span class="form__span">Confirmar contraseña</span>
+          <div class="form__password">
+            <input
+              class="form__input form__input--password"
+              [type]="viewPassword"
+              formControlName="password2"
+            />
+            <button
+              type="button"
+              class="form__eye"
+              (click)="changeViewPassword()"
+            >
+              <i
+                class="pi pi-{{
+                  viewPassword === 'password' ? 'eye' : 'eye-slash'
+                }}"
+              >
+              </i>
+            </button>
+          </div>
+          <span *ngIf="valideForm('password2')" class="form__error">
+            Este campo debe ser llenado.
+          </span>
+        </label>
+        <button type="submit" class="form__cta">Iniciar Sesión</button>
+      </form>
+      <span class="form__singup"
+        >¿Ya tienes una cuenta?
+        <a (click)="navigateTo('/auth/login/')">Ingresar</a>
+      </span>
+    </div>
+  </div>
+</section>

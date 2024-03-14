@@ -77,7 +77,7 @@
 
 .contain__box {
   width: 400px;
-  height: 428px;
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

@@ -32,10 +32,11 @@ describe('LoginComponent', () => {
     expect(component.viewPassword).toEqual('password');
   });
 
-  it('should back to route the home,  back(): void ', () => {
+  it('should navigate to in the components,  navigateTo(route: string): void', () => {
     const router = TestBed.inject(Router);
     const spyNavigate = spyOn(router, 'navigate');
-    component.back();
-    expect(spyNavigate).toHaveBeenCalledWith(['/']);
+    const route = '/';
+    component.navigateTo(route);
+    expect(spyNavigate).toHaveBeenCalledWith([route]);
   });
 });

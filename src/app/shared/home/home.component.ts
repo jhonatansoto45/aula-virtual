@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
@@ -7,6 +8,7 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import gsap from 'gsap';
 import {
   CardItemI,
   CarouselDataI,
@@ -20,7 +22,7 @@ import { cardData, carouselData, socialData } from './home.default';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
   @ViewChild('nav', { static: true }) navigatorRef!: ElementRef;
 
   images: CarouselDataI[] = carouselData;
@@ -58,12 +60,16 @@ export class HomeComponent {
     private router: Router
   ) {}
 
+  ngAfterViewInit(): void {
+    this.initAnimation();
+  }
+
   get sections() {
     return SectionHomeE;
   }
 
-  login():void {
-    this.router.navigate(['/login']);
+  login(): void {
+    this.router.navigate(['/auth/login']);
   }
 
   openMenu(active: boolean): void {
@@ -82,5 +88,14 @@ export class HomeComponent {
     const container = this.document.getElementById(section);
     container?.scrollIntoView({ behavior: 'smooth' });
     if (this.activeMenu) this.openMenu(true);
+  }
+
+  private initAnimation(): void {
+    // const nav = this.navigatorRef.nativeElement as HTMLElement;
+
+    // gsap.to(nav, {
+    //   duration: 1,
+    //   x: 15,
+    // });
   }
 }

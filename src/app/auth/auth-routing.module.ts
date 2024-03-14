@@ -6,11 +6,16 @@ import { RegistryComponent } from './registry/registry.component';
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
-  },
-  {
-    path: 'registry',
-    component: RegistryComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'registry',
+        component: RegistryComponent,
+      },
+    ],
   },
 ];
 
