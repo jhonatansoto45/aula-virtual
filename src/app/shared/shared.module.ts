@@ -9,11 +9,12 @@ import { CarouselModule } from 'primeng/carousel';
 
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
+import { AsideComponent } from './aside/aside.component';
 
 @NgModule({
-  declarations: [HomeComponent, MenuComponent],
+  declarations: [HomeComponent, MenuComponent, AsideComponent],
   imports: [CommonModule, RouterModule, CarouselModule, ReactiveFormsModule],
-  exports: [HomeComponent, MenuComponent],
+  exports: [HomeComponent, MenuComponent, AsideComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class SharedModule {}

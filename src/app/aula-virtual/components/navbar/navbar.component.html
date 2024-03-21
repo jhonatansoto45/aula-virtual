@@ -1,0 +1,18 @@
+<div class="navbar">
+  <div class="navbar__page">
+    <button class="navbar__cta">
+      <i class="pi pi-chevron-left"></i>
+    </button>
+    <span class="navbar__text">Dashboard</span>
+  </div>
+  <div class="navbar__search">
+    <input
+      #input
+      type="text"
+      class="navbar__input"
+      placeholder="Buscar"
+      (keyup)="search(input.value)"
+    />
+    <i class="pi pi-search"></i>
+  </div>
+</div>

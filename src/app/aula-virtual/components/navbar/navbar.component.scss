@@ -1,0 +1,60 @@
+.navbar {
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__page {
+  width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__cta {
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  i {
+    padding-right: 2px;
+    color: var(--white);
+  }
+}
+
+.navbar__text {
+  font-family: "Urbanist Semibold";
+}
+
+.navbar__search {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 15px;
+
+  i {
+    color: var(--border-color);
+    opacity: 1;
+  }
+}
+
+.navbar__input {
+  border: none;
+  outline: none;
+}
+
+.navbar__input:focus + .pi {
+  opacity: 0;
+}
+

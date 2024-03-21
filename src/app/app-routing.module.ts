@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
   {
+    path: 'cuv',
+    loadChildren: () =>
+      import('./aula-virtual/aula-virtual.module').then(
+        (m) => m.AulaVirtualModule
+      ),
+  },
+  {
     path: '**',
     pathMatch: 'full',
     redirectTo: '',

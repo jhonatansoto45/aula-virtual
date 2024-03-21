@@ -1,0 +1,20 @@
+<div class="flex">
+  <ng-template *ngIf="courses.length; then data; else noData"></ng-template>
+</div>
+
+<ng-template #noData>
+  <h1 [ngStyle]="{ 'line-height': '100%'}">No se encontró el curso</h1>
+</ng-template>
+
+<ng-template #data>
+  <div class="card" *ngFor="let course of courses">
+    <div class="card__picture illustration"></div>
+    <div class="card__title">
+      <span>{{ course.title }} </span>
+    </div>
+    <p-progressBar
+      [showValue]="true"
+      [value]="course?.progress"
+    ></p-progressBar>
+  </div>
+</ng-template>

@@ -1,0 +1,29 @@
+/* the calendar root */
+::ng-deep .fc {
+  width: 100%;
+  height: 100%;
+
+  .fc-toolbar-title {
+    color: var(--primary-color);
+  }
+
+  .fc-button-primary {
+    color: var(--white);
+    background-color: var(--primary-color);
+    border: none;
+  }
+
+  .fc-theme-standard .fc-list-day-cushion,
+  .fc-listWeek-view .fc-view .fc-list .fc-list-sticky {
+    background-color: var(--white);
+  }
+
+  .fc-list-day-text,
+  .fc-list-day-side-text {
+    color: var(--primary-color);
+  }
+
+  .fc-list-day-cushion .fc-cell-shaded {
+    background-color: var(--border-color) !important;
+  }
+}

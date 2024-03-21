@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 //* NGRX
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
-
-import { SharedModule } from './shared/shared.module';
+import { appReducers } from './app.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 
@@ -16,12 +17,11 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(appReducers),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,
     }),
-    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],

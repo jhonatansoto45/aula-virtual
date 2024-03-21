@@ -21,3 +21,15 @@ export interface CardItemI {
 export interface SocialItemI {
   icon: string;
 }
+
+export interface AsideItem {
+  icon: string;
+  text: string;
+  path: string;
+}
+
+export interface CardCourseI {
+  title: string;
+  progress: number;
+  path: string;
+}

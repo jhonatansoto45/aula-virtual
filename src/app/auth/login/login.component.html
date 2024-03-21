@@ -61,7 +61,7 @@
             Este campo debe ser llenado.
           </span>
         </label>
-        <button type="submit" class="form__cta">Iniciar</button>
+        <button type="submit" class="form__cta" (click)="navigateTo('/cuv/dashboard')">Iniciar</button>
       </form>
       <span class="form__singup"
         >¿No cuentas con una cuenta? <a (click)="navigateTo('/auth/registry/')">Registrate</a>
