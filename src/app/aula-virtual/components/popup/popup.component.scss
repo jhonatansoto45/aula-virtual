@@ -22,9 +22,30 @@
   animation: fadeIn 0.5s;
   overflow: auto;
 }
-
-.modal__title {
+.modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 25px;
+}
+
+.modal__close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  i {
+    color: var(--white);
+    font: 1.1rem;
+  }
+}
+
+.modal__close:active {
+  transform: scale(0.9);
 }
 
 .modal__iframe {

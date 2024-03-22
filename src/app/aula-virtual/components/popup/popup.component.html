@@ -1,11 +1,15 @@
 <div class="backdrop" #backdrop (click)="exit($event)">
   <div class="modal">
-    <h2 class="modal__title">Programacion de Datos</h2>
+    <div class="modal__header">
+      <h2 class="modal__title">Programacion de Datos</h2>
+      <button class="modal__close" (click)="exit(undefined, true)">
+        <i class="pi pi-times"></i>
+      </button>
+    </div>
     <iframe
       class="modal__iframe"
       [src]="safeURL"
       allowfullscreen
-      X-Frame-Options="true"
       referrerpolicy="strict-origin-when-cross-origin"
     ></iframe>
 
@@ -27,7 +31,7 @@
         ducimus fugit recusandae aperiam accusantium deleniti, veritatis eaque
         molestiae eos iure inventore dolor, laudantium sint. Vitae, quos esse?
       </p>
-      <br>
+      <br />
       <p class="modal__paragraph">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
         inventore repudiandae illo ipsum in dolorum minus reprehenderit sed

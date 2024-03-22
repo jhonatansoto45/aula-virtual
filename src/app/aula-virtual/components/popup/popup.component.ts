@@ -23,13 +23,12 @@ export class PopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.safeURL = this.sanitazer.bypassSecurityTrustResourceUrl(
-      'https://www.youtube.com/watch?v=2G7bII2T-ec&embedded=true'
+      'https://youtu.be/2G7bII2T-ec?si=VtlSto58LZ_IgbTe'
     );
   }
 
-  exit(event: MouseEvent): void {
+  exit(event: MouseEvent | undefined, closed = false): void {
     const element = this.backdrop.nativeElement as HTMLElement;
-
-    if (event.target === element) this.onClose.emit(true);
+    if (closed || event?.target === element) this.onClose.emit(true);
   }
 }
