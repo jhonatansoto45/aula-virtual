@@ -8,6 +8,7 @@ import {
   filterCourse,
   resetFilter,
 } from '../../../ngrx/aula-virtual/aula-virtual.actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -20,7 +21,7 @@ export class CardComponent implements OnInit, OnDestroy {
   subData: Subscription = new Subscription();
   subFilter: Subscription = new Subscription();
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private router: Router) {}
 
   ngOnInit(): void {
     this.subData = this.store
@@ -41,5 +42,9 @@ export class CardComponent implements OnInit, OnDestroy {
     if (value === '') this.store.dispatch(resetFilter());
 
     this.store.dispatch(filterCourse({ value }));
+  }
+
+  navigateCourse(id: number): void {
+    this.router.navigate(['/cuv/curso/', String(id)]);
   }
 }

@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //* Prime Ng
-import { FullCalendarModule } from '@fullcalendar/angular';
 import { ProgressBarModule } from 'primeng/progressbar';
 
 import { SharedModule } from '../shared/shared.module';
@@ -13,11 +12,16 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CoursesComponent } from './pages/courses/courses.component';
 import { CuvComponent } from './pages/cuv/cuv.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CardBannerComponent } from './components/card-banner/card-banner.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
 import { TextComponetsPipe } from './pipes/text-componets.pipe';
+
+import { DetailCourseComponent } from './pages/detail-course/detail-course.component';
+import { DynamicComponentsDirective } from './directives/dynamic-components.directive';
+import { CursoComponent } from './pages/detail-course/tabs/curso/curso.component';
+import { ParticipantesComponent } from './pages/detail-course/tabs/participantes/participantes.component';
+import { CalificacionesComponent } from './pages/detail-course/tabs/calificaciones/calificaciones.component';
+import { CompetenciasComponent } from './pages/detail-course/tabs/competencias/competencias.component';
 
 @NgModule({
   declarations: [
@@ -26,16 +30,19 @@ import { TextComponetsPipe } from './pipes/text-componets.pipe';
     CoursesComponent,
     CuvComponent,
     NavbarComponent,
-    CardBannerComponent,
-    CalendarComponent,
     CardComponent,
     SearchComponent,
     TextComponetsPipe,
+    DetailCourseComponent,
+    DynamicComponentsDirective,
+    CursoComponent,
+    ParticipantesComponent,
+    CalificacionesComponent,
+    CompetenciasComponent,
   ],
   imports: [
     CommonModule,
     AulaVirtualRoutingModule,
-    FullCalendarModule,
     ProgressBarModule,
     SharedModule,
   ],

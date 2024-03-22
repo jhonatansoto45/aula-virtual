@@ -34,3 +34,10 @@ export interface CardCourseI {
   progress: number;
   path: string;
 }
+
+export enum Tab {
+  curso,
+  participantes,
+  calificaciones,
+  competencia,
+}

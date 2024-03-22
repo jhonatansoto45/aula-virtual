@@ -1,0 +1,38 @@
+<div class="details">
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item" (click)="tabControl(tab.curso)">
+        <button>Curso</button>
+      </li>
+      <li class="nav__item" (click)="tabControl(tab.participantes)">
+        <button>Participantes</button>
+      </li>
+      <li class="nav__item" (click)="tabControl(tab.calificaciones)">
+        <button>Calificaciones</button>
+      </li>
+      <li class="nav__item" (click)="tabControl(tab.competencia)">
+        <button>Competencias</button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="information">
+    <h1 class="information__title">Introducción a la Programación</h1>
+    <div class="information__body">
+      <ng-container [ngSwitch]="tabActive">
+        <ng-container *ngSwitchCase="tab.curso">
+          <app-curso></app-curso>
+        </ng-container>
+        <ng-container *ngSwitchCase="tab.participantes">
+          <app-participantes></app-participantes>
+        </ng-container>
+        <ng-container *ngSwitchCase="tab.calificaciones">
+          <app-calificaciones></app-calificaciones>
+        </ng-container>
+        <ng-container *ngSwitchCase="tab.competencia">
+          <app-competencias></app-competencias>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CuvComponent } from './pages/cuv/cuv.component';
 import { CoursesComponent } from './pages/courses/courses.component';
+import { DetailCourseComponent } from './pages/detail-course/detail-course.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'cursos',
         component: CoursesComponent,
+      },
+      {
+        path: 'curso/:id',
+        component: DetailCourseComponent,
       },
     ],
   },

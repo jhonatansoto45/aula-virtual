@@ -7,7 +7,11 @@
 </ng-template>
 
 <ng-template #data>
-  <div class="card" *ngFor="let course of courses">
+  <div
+    class="card"
+    *ngFor="let course of courses"
+    (click)="navigateCourse(course.id)"
+  >
     <div class="card__picture illustration"></div>
     <div class="card__title">
       <span>{{ course.title }} </span>
