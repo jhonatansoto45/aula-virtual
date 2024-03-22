@@ -1,10 +1,10 @@
-import { Directive } from '@angular/core';
+import { Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[appDynamicComponents]'
+  selector: '[appDynamicHost]'
 })
 export class DynamicComponentsDirective {
 
-  constructor() { }
+  constructor(private viewContainerRef: ViewContainerRef) { }
 
 }

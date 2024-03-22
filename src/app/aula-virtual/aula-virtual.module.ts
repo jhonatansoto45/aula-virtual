@@ -22,6 +22,7 @@ import { CursoComponent } from './pages/detail-course/tabs/curso/curso.component
 import { ParticipantesComponent } from './pages/detail-course/tabs/participantes/participantes.component';
 import { CalificacionesComponent } from './pages/detail-course/tabs/calificaciones/calificaciones.component';
 import { CompetenciasComponent } from './pages/detail-course/tabs/competencias/competencias.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CompetenciasComponent } from './pages/detail-course/tabs/competencias/c
     ParticipantesComponent,
     CalificacionesComponent,
     CompetenciasComponent,
+    PopupComponent,
   ],
   imports: [
     CommonModule,

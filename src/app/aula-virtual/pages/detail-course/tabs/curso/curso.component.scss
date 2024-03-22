@@ -1,0 +1,95 @@
+.curso {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.avisos {
+  width: 90%;
+  height: 280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 40px;
+  overflow: auto;
+}
+
+.avisos__header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+
+  i {
+    font-size: 1.3rem;
+    background-color: var(--orange);
+    padding: 8px;
+    color: var(--white);
+    border-radius: 50%;
+  }
+
+  span {
+    font-size: 1.2rem;
+    font-family: "Urbanist Semibold";
+  }
+}
+
+hr {
+  width: 100%;
+  background-color: var(--border-color);
+  margin-bottom: 10px;
+}
+
+.material {
+  margin-top: 50px;
+}
+
+.material__title {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 23px;
+  font-size: 2rem;
+}
+
+.material__cards {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  justify-items: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.material__card {
+  width: 250px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 12px;
+  background-image: url(../../../../../../assets/images/illustrations/glass.jpeg);
+  background-attachment: fixed;
+  text-align: center;
+  transition: 0.1s ease-in-out all;
+  box-shadow: var(--box-shadow);
+
+  p {
+    color: var(--white);
+    font-size: 4.5rem;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+.material__card:hover {
+  transform: scale(1.09);
+}
+
+.material__card:active{
+  transform: scale(0.9);
+}

@@ -1,1 +1,39 @@
-<p>curso works!</p>
+<div class="curso">
+  <section class="avisos">
+    <div class="avisos__header">
+      <i class="pi pi-megaphone"></i>
+      <span>Avisos</span>
+    </div>
+    <hr />
+    <div class="avisos__content">
+      <ul>
+        <li>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti,
+          accusantium, optio facilis labore dolores error quisquam provident nam
+          similique sed tenetur iure possimus beatae velit qui eligendi nobis
+          consequuntur laudantium? Rem, consequuntur sunt ducimus eos corporis
+          ullam at eius aliquam aut assumenda soluta quisquam, magni atque
+          laborum nihil ut aspernatur quis illo tempora adipisci non rerum.
+          Laborum vitae quidem accusamus! Consectetur voluptatum laudantium
+          consequuntur vero cumque ipsam ab illo quibusdam hic, aliquam
+          voluptatibus distinctio ut exercitationem similique voluptas rem
+          facilis tempore, in, nemo molestias aliquid magnam quis dolorem quo.
+          Tempora.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="material">
+    <h1 class="material__title">Material</h1>
+    <div class="material__cards">
+      <div
+        class="material__card"
+        *ngFor="let item of cards; let i = index"
+        (click)="openComponent()"
+      >
+        <p>{{ i + 1 }}</p>
+      </div>
+    </div>
+  </section>
+</div>
