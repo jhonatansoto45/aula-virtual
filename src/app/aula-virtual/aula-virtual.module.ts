@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+//* Prime Ng
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { ProgressBarModule } from 'primeng/progressbar';
 
@@ -15,6 +16,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CardBannerComponent } from './components/card-banner/card-banner.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { CardComponent } from './components/card/card.component';
+import { SearchComponent } from './components/search/search.component';
+import { TextComponetsPipe } from './pipes/text-componets.pipe';
 
 @NgModule({
   declarations: [
@@ -26,13 +29,15 @@ import { CardComponent } from './components/card/card.component';
     CardBannerComponent,
     CalendarComponent,
     CardComponent,
+    SearchComponent,
+    TextComponetsPipe,
   ],
   imports: [
     CommonModule,
     AulaVirtualRoutingModule,
-    SharedModule,
     FullCalendarModule,
     ProgressBarModule,
+    SharedModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

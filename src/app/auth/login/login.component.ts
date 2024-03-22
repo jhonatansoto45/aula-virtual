@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+
+import { AppState } from '../../app.reducer';
+import { courses } from '../../ngrx/aula-virtual/aula-virtual.actions';
+import { listCourses } from './data.default';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +18,11 @@ export class LoginComponent implements OnInit {
   regexEmail: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   form!: FormGroup;
 
-  constructor(private router: Router, private fb: FormBuilder) {}
+  constructor(
+    private router: Router,
+    private fb: FormBuilder,
+    private store: Store<AppState>
+  ) {}
 
   ngOnInit(): void {
     this.initForm();
@@ -29,6 +38,10 @@ export class LoginComponent implements OnInit {
       : false;
 
   navigateTo(route: string): void {
+    //! remover, solo para simular data
+    if (route === '/cuv/dashboard')
+      this.store.dispatch(courses({ coursesData: listCourses }));
+
     this.router.navigate([route]);
   }
 

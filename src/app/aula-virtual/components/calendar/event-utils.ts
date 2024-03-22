@@ -12,7 +12,7 @@ export const INITIAL_EVENTS: EventInput[] = [
   },
   {
     id: createEventId(),
-    title: 'Ingeniría de Software',
+    title: 'Ingeniería de Software',
     start: TODAY_STR + 'T03:00:00',
     end: TODAY_STR + 'T05:00:00'
   },

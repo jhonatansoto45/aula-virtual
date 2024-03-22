@@ -2,9 +2,12 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 
-import { AppState } from 'src/app/app.reducer';
-import { CardCourseI } from 'src/app/interfaces/aula-virtual.interfaces';
-import { courses } from './data.default';
+import { AppState } from '../../../app.reducer';
+import { CardCourseI } from '../../../interfaces/aula-virtual.interfaces';
+import {
+  filterCourse,
+  resetFilter,
+} from '../../../ngrx/aula-virtual/aula-virtual.actions';
 
 @Component({
   selector: 'app-card',
@@ -14,26 +17,29 @@ import { courses } from './data.default';
 export class CardComponent implements OnInit, OnDestroy {
   courses: CardCourseI[] = [];
 
-  subStore: Subscription = new Subscription();
+  subData: Subscription = new Subscription();
+  subFilter: Subscription = new Subscription();
 
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
-    this.subStore = this.store
+    this.subData = this.store
+      .select('cuv')
+      .subscribe(({ filterCourses }) => (this.courses = filterCourses));
+
+    this.subFilter = this.store
       .select('ui')
       .subscribe(({ params }) => this.filterCourses(params));
   }
 
   ngOnDestroy(): void {
-    this.subStore.unsubscribe();
+    this.subData.unsubscribe();
+    this.subFilter.unsubscribe();
   }
 
   filterCourses(value: string): void {
-    if (value === '') this.courses = courses;
+    if (value === '') this.store.dispatch(resetFilter());
 
-    const course = value.toLowerCase().trim();
-    this.courses = this.courses.filter(({ title }) =>
-      title.toLowerCase().trim().includes(course)
-    );
+    this.store.dispatch(filterCourse({ value }));
   }
 }

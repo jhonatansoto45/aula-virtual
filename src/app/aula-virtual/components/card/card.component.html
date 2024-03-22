@@ -3,7 +3,7 @@
 </div>
 
 <ng-template #noData>
-  <h1 [ngStyle]="{ 'line-height': '100%'}">No se encontró el curso</h1>
+  <h1 [ngStyle]="{ 'line-height': '100%' }">No se encontró el curso</h1>
 </ng-template>
 
 <ng-template #data>
@@ -13,6 +13,7 @@
       <span>{{ course.title }} </span>
     </div>
     <p-progressBar
+      class="progress__bar"
       [showValue]="true"
       [value]="course?.progress"
     ></p-progressBar>

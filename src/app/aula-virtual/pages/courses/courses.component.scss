@@ -1,11 +1,17 @@
 .courses {
   width: 100%;
   margin-top: 35px;
-
 }
 
 .courses__title {
-  margin-bottom: 19px;
   font-size: 2rem;
   font-family: inherit;
+}
+
+.courses__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 19px;
 }

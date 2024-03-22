@@ -29,6 +29,7 @@ export interface AsideItem {
 }
 
 export interface CardCourseI {
+  id: number;
   title: string;
   progress: number;
   path: string;

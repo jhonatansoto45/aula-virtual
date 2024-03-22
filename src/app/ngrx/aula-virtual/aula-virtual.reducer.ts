@@ -1,20 +1,36 @@
-import { createReducer, on } from '@ngrx/store';
-// import { increment } from './counter.actions';
+import { Action, createReducer, on } from '@ngrx/store';
+import { CardCourseI } from '../../interfaces/aula-virtual.interfaces';
+import { courses, filterCourse, resetFilter } from './aula-virtual.actions';
 
-export interface State {
-    key: String;
+export interface StateCuv {
+  filterCourses: CardCourseI[];
+  originalCourses: CardCourseI[];
 }
 
-export const initialState: State = {
-   key: 'hola',
-}
+export const initialState: StateCuv = {
+  filterCourses: [],
+  originalCourses: [],
+};
 
-const _counterReducer = createReducer(initialState,
-
-    // on(increment, state => ({ ...state, key: 'hola'})),
-
+const _aulaVirtualReducer = createReducer(
+  initialState,
+  on(courses, (state, { coursesData }) => ({
+    ...state,
+    originalCourses: coursesData,
+    filtercourses: coursesData,
+  })),
+  on(filterCourse, (state, { value }) => ({
+    ...state,
+    filterCourses: state.originalCourses.filter((course) =>
+      course.title.toLowerCase().trim().includes(value.toLowerCase().trim())
+    ),
+  })),
+  on(resetFilter, (state) => ({
+    ...state,
+    filterCourses: state.originalCourses,
+  }))
 );
 
-// export function counterReducer(state, action) {
-//     return _counterReducer(state, action);
-// }
+export function aulaVirtualReducer(state: any, action: Action) {
+  return _aulaVirtualReducer(state, action);
+}

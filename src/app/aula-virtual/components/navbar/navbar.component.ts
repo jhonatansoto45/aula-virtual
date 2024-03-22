@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-
-import { search } from '../../../ngrx/ui/ui.actions';
-import { AppState } from '../../../app.reducer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +7,9 @@ import { AppState } from '../../../app.reducer';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  constructor(private store: Store<AppState>) {}
+  constructor(private router: Router) {}
 
-  search(params: string): void {
-    this.store.dispatch(search({ params }));
+  get title() {
+    return this.router.url;
   }
 }

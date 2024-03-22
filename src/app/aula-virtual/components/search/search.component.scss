@@ -1,0 +1,24 @@
+.navbar__search {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 15px;
+
+  i {
+    color: var(--border-color);
+    opacity: 1;
+  }
+}
+
+.navbar__input {
+  border: none;
+  outline: none;
+}
+
+.navbar__input:focus + .pi {
+  opacity: 0;
+}
